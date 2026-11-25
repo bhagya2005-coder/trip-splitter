@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #1b2940;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 5%, rgba(92, 151, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 95% 15%, rgba(90, 207, 177, 0.12), transparent 25%),
+    #f3f6fb;
+}
+
+#root {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 42px 28px 64px;
+}
+
+.app {
+  width: 100%;
+}
+
+/* Header */
+.hero {
+  padding: 34px 36px;
+  color: white;
+  background: linear-gradient(120deg, #173b68, #2869a9);
+  border-radius: 22px;
+  box-shadow: 0 16px 35px rgba(29, 71, 119, 0.2);
+}
+
+.hero-tag {
+  margin-bottom: 12px;
+  color: #bcd8f8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  color: #d7e6f8;
+  font-size: 1rem;
+}
+
+.trip-caption {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 12px;
+  color: #e6f2ff;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Summary cards */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+.summary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 135px;
+  padding: 22px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e5ebf3;
+  border-radius: 17px;
+  box-shadow: 0 6px 20px rgba(31, 55, 91, 0.05);
+}
+
+.summary-label {
+  color: #77849a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.summary-card strong {
+  color: #203c60;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: -0.7px;
+}
+
+.summary-icon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: #2869a9;
+  background: #edf5ff;
+  border-radius: 11px;
+  font-weight: 700;
+}
+
+/* Section headings */
+h2 {
+  margin: 32px 0 16px;
+  color: #203c60;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-count {
+  padding: 6px 10px;
+  color: #6d7c92;
+  background: #e8eef7;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e4eaf3;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(31, 55, 91, 0.07);
+}
+
+input,
+select {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 14px 15px;
+  color: #263750;
+  background: #f7f9fc;
+  border: 1px solid #dce5f0;
+  border-radius: 11px;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+input::placeholder {
+  color: #8c9ab0;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  background: white;
+  border-color: #4d8bd1;
+  box-shadow: 0 0 0 4px rgba(77, 139, 209, 0.13);
+}
+
+button {
+  padding: 14px 22px;
+  color: white;
+  background: linear-gradient(135deg, #2874bd, #205b9b);
+  border: 0;
+  border-radius: 11px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(37, 103, 172, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 17px rgba(37, 103, 172, 0.25);
+  filter: brightness(1.05);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Expense cards */
+.expense {
+  margin-bottom: 13px;
+  padding: 20px 23px;
+  background: white;
+  border: 1px solid #e5ebf3;
+  border-left: 5px solid #5aa6c8;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(31, 55, 91, 0.045);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.expense:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31, 55, 91, 0.08);
+}
+
+.expense-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.expense h3 {
+  margin: 0 0 8px;
+  color: #213b5d;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.expense p {
+  margin: 0;
+  color: #758197;
+  font-size: 0.92rem;
+}
+
+.expense-top > strong {
+  color: #176c58;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.expense-category {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 9px;
+  color: #60718a;
+  background: #f0f4f9;
+  border-radius: 7px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Balance cards */
+.balance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.balance-card {
+  padding: 17px 19px;
+  background: white;
+  border: 1px solid #e5ebf3;
+  border-radius: 13px;
+  box-shadow: 0 4px 14px rgba(31, 55, 91, 0.04);
+}
+
+.balance-member {
+  margin-bottom: 8px;
+  color: #344967;
+  font-weight: 700;
+}
+
+.balance-amount {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.positive {
+  color: #16805d;
+}
+
+.negative {
+  color: #c36b35;
+}
+
+.neutral {
+  color: #77849a;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  #root {
+    padding: 22px 15px 40px;
+  }
+
+  .hero {
+    padding: 26px 22px;
+    border-radius: 17px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-card {
+    min-height: 110px;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  input,
+  select,
+  button {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .balance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-top {
+    flex-direction: column;
+  }
+}
